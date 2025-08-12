@@ -7,10 +7,11 @@
 clear
 echo "======================================"
 echo "   Welcome to Class 24 Calculator"
+sleep 2
 echo "======================================"
 echo "  Let's do some quick math together!"
 echo "--------------------------------------"
-sleep 3 # Pause for 3 seconds to let the user read the welcome message
+sleep 2 # Pause for 2 seconds to let the user read the welcome message
 
 # Ask for two numbers
 read -p "Please enter your first number: " num1
