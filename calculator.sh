@@ -11,6 +11,7 @@ read -p "Please enter your second number: " num2
 echo "Select your operation"
 echo "1. Addition (+)"
 echo "2. Subtraction : subtract items (-)"
+echo "3. Multiplication (*)"
 
 # Read the selected user choice
 read -p "Select operator between 1 and 2 [1-2]: " choice
@@ -24,6 +25,10 @@ case "$choice" in
   2)
     result=$(echo "$num1 - $num2" | bc -l)
     echo "Result: $num1 - $num2 = $result"
+    ;;
+    
+  3) result=$(echo "$num1 * $num2" | bc -l)
+    echo "Result: $num1 * $num2 = $result"
     ;;
   *)
     echo "Invalid choice"
