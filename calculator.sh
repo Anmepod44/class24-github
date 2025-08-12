@@ -1,7 +1,16 @@
 #!/bin/bash
 
-echo "Class 24 calculator"
-echo "start================start"
+# ================================
+# Simple Calculator - Class 24
+# ================================
+
+clear
+echo "======================================"
+echo "   Welcome to Class 24 Calculator"
+echo "======================================"
+echo "  Let's do some quick math together!"
+echo "--------------------------------------"
+sleep 3 # Pause for 3 seconds to let the user read the welcome message
 
 # Ask for two numbers
 read -p "Please enter your first number: " num1
@@ -33,14 +42,13 @@ case "$choice" in
     echo "Result: $num1 * $num2 = $result"
     ;;
   4)
-    result=$(echo "$num1 % $num2" | bc -l)
-    echo "Result: $num1 % $num2 = $result"
-    ;;
-  5)result=$(echo "$num1 / $num2" | bc -l)
+    result=$(echo "$num1 / $num2" | bc -l)
     echo "Result: $num1 / $num2 = $result"
+    ;;
+  5)result=$(echo "$num1 % $num2" | bc)
+    echo "Result: $num1 % $num2 = $result"
     ;;  
   *)
     echo "Invalid choice"
-    exit 1
     ;;
 esac
