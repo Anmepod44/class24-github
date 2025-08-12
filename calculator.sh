@@ -12,9 +12,10 @@ echo "Select your operation"
 echo "1. Addition (+)"
 echo "2. Subtraction : subtract items (-)"
 echo "3. Multiplication (*)"
+echo "4. Modulus (%)"
 
 # Read the selected user choice
-read -p "Select operator between 1 and 2 [1-2]: " choice
+read -p "Select operator between 1 and 4 [1-4]: " choice
 
 # Perform arithmetic operation
 case "$choice" in
@@ -29,6 +30,10 @@ case "$choice" in
     
   3) result=$(echo "$num1 * $num2" | bc -l)
     echo "Result: $num1 * $num2 = $result"
+    ;;
+  4)
+    result=$(echo "$num1 % $num2" | bc -l)
+    echo "Result: $num1 % $num2 = $result"
     ;;
   *)
     echo "Invalid choice"
