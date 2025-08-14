@@ -24,7 +24,6 @@ echo "2. Subtraction : subtract items (-)"
 echo "3. Multiplication (*)"
 echo "4. Division (/)"
 echo "5. Modulus (%)"
-echo "6. Square Root (sqrt)"
 
 # Read the selected user choice
 read -p "Select operator between 1 and 5 [1-5]: " choice
