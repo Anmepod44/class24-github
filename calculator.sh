@@ -24,9 +24,11 @@ echo "2. Subtraction : subtract items (-)"
 echo "3. Multiplication (*)"
 echo "4. Division (/)"
 echo "5. Modulus (%)"
+echo "6. Exit"
+echo "--------------------------------------"
 
 # Read the selected user choice
-read -p "Select operator between 1 and 5 [1-5]: " choice
+read -p "Select operator between 1 and 6 [1-6]: " choice
 
 # Perform arithmetic operation
 case "$choice" in
@@ -48,12 +50,13 @@ case "$choice" in
     ;;
   5)result=$(echo "$num1 % $num2" | bc)
     echo "Result: $num1 % $num2 = $result"
-    ;;  
-  6) result=$(echo "scale=2; sqrt($num1)" | bc -l)
-    echo "Result: sqrt($num1) = $result"
+    ;;
+  6)
+    echo "Exiting..."
+    exit 0
     ;;
 
-  *)
-    echo "Invalid choice"
+  *) echo "Invalid choice"
+    exit 1
     ;;
 esac
