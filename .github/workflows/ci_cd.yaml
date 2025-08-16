@@ -4,6 +4,23 @@ on:
         branches:
             - marvin
 jobs:
-    build:
+    simple-workflow:
         runs-on: ubuntu:latest
-        
+        steps:
+            - name : checkout code
+              uses : actions/checkout@v3
+
+            - name : list files in directory
+              run : ls
+
+            - name : Print Hello World
+              run  : echo "echo hello world from class 24"
+
+            - name : Perform a unit test
+              run : echo "unit test performed"
+
+            - name : Perform linting
+              run : echo "linting performed"
+
+            - name : Deploy to Production
+              run : echo "deployed to production"
