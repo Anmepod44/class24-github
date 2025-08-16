@@ -13,3 +13,6 @@ jobs:
 
       - name: list files
         run: ls
+      
+      - name: ubuntu version
+        run: lsb_release -a
