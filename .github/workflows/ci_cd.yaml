@@ -1,0 +1,9 @@
+name: A sample workflow for class 24
+on:
+    push:
+        branches:
+            - marvin
+jobs:
+    build:
+        runs-on: ubuntu:latest
+        
