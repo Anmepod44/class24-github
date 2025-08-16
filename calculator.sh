@@ -1,7 +1,17 @@
 #!/bin/bash
 
-echo "Class 24 calculator"
-echo "start================start"
+# ================================
+# Simple Calculator - Class 24
+# ================================
+
+clear
+echo "======================================"
+echo "   Welcome to Class 24 Calculator"
+sleep 2
+echo "======================================"
+echo "  Let's do some quick math together!"
+echo "--------------------------------------"
+sleep 2 # Pause for 2 seconds to let the user read the welcome message
 
 # Ask for two numbers
 read -p "Please enter your first number: " num1
@@ -12,9 +22,13 @@ echo "Select your operation"
 echo "1. Addition (+)"
 echo "2. Subtraction : subtract items (-)"
 echo "3. Multiplication (*)"
+echo "4. Division (/)"
+echo "5. Modulus (%)"
+echo "6. Exit"
+echo "--------------------------------------"
 
 # Read the selected user choice
-read -p "Select operator between 1 and 2 [1-2]: " choice
+read -p "Select operator between 1 and 6 [1-6]: " choice
 
 # Perform arithmetic operation
 case "$choice" in
@@ -30,8 +44,19 @@ case "$choice" in
   3) result=$(echo "$num1 * $num2" | bc -l)
     echo "Result: $num1 * $num2 = $result"
     ;;
-  *)
-    echo "Invalid choice"
+  4)
+    result=$(echo "$num1 / $num2" | bc -l)
+    echo "Result: $num1 / $num2 = $result"
+    ;;
+  5)result=$(echo "$num1 % $num2" | bc)
+    echo "Result: $num1 % $num2 = $result"
+    ;;
+  6)
+    echo "Exiting..."
+    exit 0
+    ;;
+
+  *) echo "Invalid choice"
     exit 1
     ;;
 esac
