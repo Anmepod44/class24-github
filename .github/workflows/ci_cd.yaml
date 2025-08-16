@@ -1,0 +1,9 @@
+name: CI/CD Pipeline newera class24
+on: 
+  push:
+    branches:
+      - amadou
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
