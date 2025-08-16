@@ -1,8 +1,9 @@
 name: A sample workflow for class 24
 on:
-    push:
+    pull_request:
+        types: [opened]
         branches:
-            - marvin
+            - master
 jobs:
     simple-workflow:
         runs-on: ubuntu-latest
