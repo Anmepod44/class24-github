@@ -1,0 +1,31 @@
+name: A sample build pipeline for a maven project
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -name: checkout step
+      uses: actions/checkout@v4
+
+      -name : Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: "17"
+        cache: maven
+
+      -name: Validate our pom.xml file
+      run: mvn validate
+
+      -name: Test the project
+      run: mvn test
+
+      -name: Package the project
+      run: mvn package
+
+      -name: Build the artefacts
+      run: ls -la target
+        
